@@ -1,9 +1,7 @@
 import { wordList } from '../lib/game'
 
-const initialState = null
 
-
-const reducer = (state = initialState, action = {}) => {
+const reducer = (state = null, action = {}) => {
     switch (action.type) {
         case 'NEW_WORD':
           return wordList[Math.floor(Math.random() * wordList.length)]
@@ -13,5 +11,3 @@ const reducer = (state = initialState, action = {}) => {
 }
 
 export default reducer
-
-//eerste actie is een woord kiezen. 
