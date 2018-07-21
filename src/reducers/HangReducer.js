@@ -1,9 +1,12 @@
+import { wordList } from '../lib/game'
+
 const initialState = null
+
 
 const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
-        case 'IETS':
-          return action.payload
+        case 'NEW_WORD':
+          return wordList[Math.floor(Math.random() * wordList.length)]
         default:
           return state
     }

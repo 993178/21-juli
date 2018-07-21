@@ -10,13 +10,20 @@ export default class Hangman3dContainer extends PureComponent {
     }
 
   randomWord = () => {
-    return wordList[Math.floor(Math.random() * wordList.length)]
+    this.props.dispatch({
+      type: 'NEW_WORD'
+    })
+    console.log('er gebeurt niets')
   }
 
 
   render() {
     return (
-        <Hangman />
+        <Hangman randomWord={this.randomWord}/>
     )
   }
 }
+
+
+
+//export default connect(mapStateToProps)(HangmanContainer)
